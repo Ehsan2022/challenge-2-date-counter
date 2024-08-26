@@ -43,7 +43,7 @@ p {
 button {
   background-color: black;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   width: 80px;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -59,7 +59,7 @@ button {
   justify-content: center;
   background-color: black;
   color: white;
-  padding: 20px 100px;
+  padding: 10px 100px 40px 100px;
   letter-spacing: 3px;
   font-weight: bold;
   border-radius: 40px;

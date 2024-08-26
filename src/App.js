@@ -15,17 +15,15 @@ function Counter() {
   const [steps, setSteps] = useState(1);
   const [counts, setCounts] = useState(0);
 
-  function incStep() {
-    setSteps((s) => s + 1);
-  }
-  function dicStep() {
-    setSteps((s) => s - 1);
-  }
   function incCount() {
     setCounts((c) => c + steps);
   }
   function dicCount() {
     setCounts((c) => c - steps);
+  }
+  function handleReset() {
+    setCounts(0);
+    setSteps(1);
   }
 
   const date = new Date();
@@ -34,7 +32,7 @@ function Counter() {
   return (
     <>
       <div>
-      <span>Step: </span>
+        <span>Step: </span>
         <input
           type="range"
           min={1}
@@ -46,7 +44,8 @@ function Counter() {
       </div>
       <div>
         <button onClick={dicCount}>-</button>
-        <input className="input"
+        <input
+          className="input"
           type="text"
           value={counts}
           onChange={(e) => setCounts(Number(e.target.value))}
@@ -54,15 +53,20 @@ function Counter() {
         <button onClick={incCount}>+</button>
       </div>
       <div className="text">
-        <span>
+        <p>
           {counts === 0
             ? "Today is "
             : counts > 0
             ? `${counts} days from today is `
             : `${Math.abs(counts)} days ago was `}
-        </span>
+        </p>
         <span>{date.toDateString()}</span>
       </div>
+      {steps !== 1 || counts !== 0 ? (
+        <div>
+          <button onClick={handleReset}>Reset</button>
+        </div>
+      ) : null}
     </>
   );
 }
