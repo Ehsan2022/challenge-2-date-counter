@@ -6,7 +6,6 @@ export default function App() {
     <div className="App">
       <h1>Date Counter</h1>
       <p>Update count to find date</p>
-      <hr/>
       <Counter></Counter>
     </div>
   );
@@ -35,13 +34,23 @@ function Counter() {
   return (
     <>
       <div>
-        <button onClick={dicStep}>-</button>
-        <span>Step : {steps}</span>
-        <button onClick={incStep}>+</button>
+      <span>Step: </span>
+        <input
+          type="range"
+          min={1}
+          max={10}
+          value={steps}
+          onChange={(e) => setSteps(Number(e.target.value))}
+        />
+        <span> {steps}</span>
       </div>
       <div>
         <button onClick={dicCount}>-</button>
-        <span>Count : {counts}</span>
+        <input className="input"
+          type="text"
+          value={counts}
+          onChange={(e) => setCounts(Number(e.target.value))}
+        />
         <button onClick={incCount}>+</button>
       </div>
       <div className="text">
