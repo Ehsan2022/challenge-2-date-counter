@@ -15,8 +15,8 @@ p {
   height: 500px;
   width: 600px;
   border-radius: 10px;
-  background: linear-gradient(60deg, brown, gray, rgb(77, 76, 76));
-  box-shadow: 0 0 20px 1px rgba(255, 255, 255, 0.61);
+  background: white;
+  box-shadow: 0 0 10px 1px rgba(255, 255, 255, 0.61);
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -28,6 +28,8 @@ p {
   -o-border-radius: 10px;
 }
  .input{
+  font-weight: bolder;
+  text-align: center;
   margin-top: -50px;
   height: 25px;
   padding: 10px 10px 0 10px;

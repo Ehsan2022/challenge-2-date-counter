@@ -40,7 +40,7 @@ function Counter() {
           value={steps}
           onChange={(e) => setSteps(Number(e.target.value))}
         />
-        <span> {steps}</span>
+        <span className="steps"> {steps}</span>
       </div>
       <div>
         <button onClick={dicCount}>-</button>
